@@ -22,3 +22,12 @@ This project demonstrates an **Agentic RAG workflow**:
 python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requirements.txt
+
+## Indexed Data & FAISS Output
+
+The indexed documents and FAISS vector store are available on Google Drive:
+https://drive.google.com/drive/folders/1nYcEf0v45tRzbBk18L94Lyhxb9sN47NN?usp=drive_link
+
+Contents:
+- data/docs.txt
+- vectorstore_faiss/ (FAISS index)
