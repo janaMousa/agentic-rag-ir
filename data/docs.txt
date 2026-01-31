@@ -1,4 +1,71 @@
-IR Notes (sample)
-- TF-IDF: term frequency * inverse document frequency.
-- Inverted index maps terms to posting lists of documents.
-- BM25 is a ranking function based on term saturation and document length.
+Information Retrieval (IR) Notes
+
+Information Retrieval deals with finding relevant documents for a given user query.
+The goal of IR systems is to rank documents by relevance rather than return exact matches.
+
+An inverted index is the core data structure in IR systems.
+It maps each term to a posting list of documents in which the term appears.
+Posting lists may include additional information such as term frequency and positions.
+
+Tokenization is the process of splitting text into individual terms or tokens.
+Normalization includes lowercasing, removing punctuation, and handling special characters.
+
+Stopwords are common words such as "the", "is", and "and" that are often removed
+because they carry little semantic meaning for retrieval tasks.
+
+Stemming reduces words to their root form, for example "retrieval" to "retriev".
+Lemmatization reduces words to their dictionary form and is linguistically informed.
+
+Term Frequency (TF) measures how often a term appears in a document.
+Inverse Document Frequency (IDF) measures how rare a term is across the document collection.
+
+TF-IDF is computed as TF multiplied by IDF.
+It gives higher weight to terms that are frequent in a document but rare in the corpus.
+
+Cosine similarity is commonly used to measure similarity between query and document vectors.
+It measures the angle between two vectors rather than their magnitude.
+
+BM25 is a probabilistic ranking function used in many search engines.
+It improves TF-IDF by modeling term saturation and document length normalization.
+
+BM25 assigns diminishing returns to repeated occurrences of a term in a document.
+It also penalizes very long documents to avoid length bias.
+
+Precision is the fraction of retrieved documents that are relevant.
+Recall is the fraction of relevant documents that are retrieved.
+
+There is usually a trade-off between precision and recall.
+Improving one may reduce the other.
+
+Mean Average Precision (MAP) evaluates ranking quality over multiple queries.
+It averages precision values at points where relevant documents are retrieved.
+
+Normalized Discounted Cumulative Gain (nDCG) considers graded relevance.
+It rewards placing highly relevant documents near the top of the ranking.
+
+Query likelihood models estimate the probability of generating a query from a document.
+They are based on language modeling and smoothing techniques.
+
+Sparse retrieval methods such as TF-IDF and BM25 rely on exact term matching.
+Dense retrieval methods use neural embeddings to capture semantic similarity.
+
+Dense retrieval represents queries and documents as vectors in a semantic space.
+Similarity is computed using vector distance measures.
+
+Retrieval-Augmented Generation (RAG) combines retrieval and text generation.
+It retrieves relevant documents and uses them as context for a language model.
+
+RAG reduces hallucinations by grounding answers in retrieved sources.
+It is commonly used in question answering systems.
+
+Vector databases store document embeddings for efficient similarity search.
+FAISS is a popular library for fast vector similarity search.
+
+An agentic system uses decision logic to choose between multiple tools.
+In an Agentic RAG system, the agent decides whether to use retrieval or another API.
+
+External APIs can provide real-time or factual data.
+RAG is used when information is contained in a local knowledge base.
+
+Language models are used to generate fluent answers.
+They should rely only on retrieved context when used in RAG systems.
